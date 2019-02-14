@@ -35,8 +35,8 @@ walk_left =  [pygame.image.load('img/pygame_left_1.png'),
               pygame.image.load('img/pygame_left_5.png'),
               pygame.image.load('img/pygame_left_6.png'),
               ]
-bg = pygame.image.load('pygame_bg.jpg')
-playerStand = pygame.image.load('pygame_idle.png')
+bg = pygame.image.load('img/pygame_bg.jpg')
+playerStand = pygame.image.load('img/pygame_idle.png')
 
 class boll():
     def __init__(self,x,y, radius, color, facing):
