@@ -1,2 +1,2 @@
 py2app==0.19
-pyinstaller==3.4
+pyinstaller==3.6
