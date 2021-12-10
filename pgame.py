@@ -1,3 +1,4 @@
+from abc import ABC
 import pygame
 
 pygame.init()
@@ -39,7 +40,34 @@ bg = pygame.image.load('img/pygame_bg_3.jpg')
 playerStand = pygame.image.load('img/pygame_idle.png')
 
 
-class boll():
+class Base_Scene(ABC):
+    def __init__(
+            self,
+            back_ground,
+            another_pass_hero,
+            hero,
+            enemies,
+            tile_map=None,
+            **kwargs,
+    ):
+        pass
+
+
+class Base_hero(ABC):
+
+    def __init__(
+            self,
+            walk_left,
+            walk_right,
+            playerStand,
+            weapon,
+            controll=None,
+            **kwargs,
+    ):
+        pass
+
+
+class Bullet:
     def __init__(self, x, y, radius, color, facing):
         self.x = x
         self.y = y
@@ -87,7 +115,7 @@ while (run):
         else:
             bullets.pop(bullets.index(bullet))
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_f]:
+    if keys[pygame.K_f]:  # Bullet
         if lastMove == 'right':
             facing = 1
         else:
@@ -95,8 +123,14 @@ while (run):
 
         if len(bullets) < 5:
             bullets.append(
-                boll(round(x + widht // 2), round(y + height // 2), 5,
-                     (255, 0, 0), facing))
+                Bullet(
+                    round(x + widht // 2),
+                    round(y + height // 2),
+                    5,
+                    (255, 0, 0),
+                    facing,
+                )
+            )
 
     if keys[pygame.K_LEFT] and x > 5:
         x -= speed
