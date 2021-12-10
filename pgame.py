@@ -35,7 +35,7 @@ walk_left = [pygame.image.load('img/pygame_left_1.png'),
              pygame.image.load('img/pygame_left_5.png'),
              pygame.image.load('img/pygame_left_6.png'),
              ]
-bg = pygame.image.load('img/pygame_bg.jpg')
+bg = pygame.image.load('img/pygame_bg_3.jpg')
 playerStand = pygame.image.load('img/pygame_idle.png')
 
 
