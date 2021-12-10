@@ -1,1 +1,1 @@
-Platformer game for demonstration pygame in mobile and desktop
+the Platformer game for demonstration the pygame on mobile and desktop
