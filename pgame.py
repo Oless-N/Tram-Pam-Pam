@@ -4,7 +4,7 @@ pygame.init()
 
 win = pygame.display.set_mode((1024, 600))
 pygame.display.set_caption('TramPamPam')
-# pygame.display.set_icon('pygame_left_2.png')
+# pygame.display.set_icon()
 
 
 x = 50
