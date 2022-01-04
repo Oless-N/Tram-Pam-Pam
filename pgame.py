@@ -20,6 +20,8 @@ left = False
 right = False
 aniCount = 0
 clock = pygame.time.Clock()
+sound = pygame.mixer.music
+sound.set_volume(0.2)
 
 lastMove = 'right'
 walk_right = [pygame.image.load('img/pygame_right_1.png'),
@@ -29,6 +31,7 @@ walk_right = [pygame.image.load('img/pygame_right_1.png'),
               pygame.image.load('img/pygame_right_5.png'),
               pygame.image.load('img/pygame_right_6.png'),
               ]
+
 walk_left = [pygame.image.load('img/pygame_left_1.png'),
              pygame.image.load('img/pygame_left_2.png'),
              pygame.image.load('img/pygame_left_3.png'),
@@ -116,6 +119,8 @@ while (run):
             bullets.pop(bullets.index(bullet))
     keys = pygame.key.get_pressed()
     if keys[pygame.K_f]:  # Bullet
+        # sound.load('media/fire1.wav')
+        sound.play()
         if lastMove == 'right':
             facing = 1
         else:
@@ -148,8 +153,12 @@ while (run):
         lastMove = 'left'
 
     if not (isJump):
+
+
         if keys[pygame.K_UP] and y > 5:
             isJump = True
+            sound.load('media/0_jump.wav')
+            sound.play()
         # if keys[pygame.K_DOWN]and y<600-height-5:
         #     y+=speed
         if keys[pygame.K_SPACE]:

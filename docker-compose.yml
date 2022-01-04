@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  buildozer:
+    image: kivy/buildozer
+    hostname: buildozer
+    container_name: buildozer
+    command:
+      -docker build -t jedie/buildozer .
+      -docker run -t jedie/buildozer -v ${PWD}/kivy_hello_world:/buildozer/ buildozer --verbose android release
+      -docker run -it jedie/buildozer -v ${PWD}/kivy_hello_world:/buildozer/ /bin/bash

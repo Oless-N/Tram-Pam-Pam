@@ -1,0 +1,2 @@
+app:
+	doxker-compose up
