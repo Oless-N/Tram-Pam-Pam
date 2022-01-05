@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CODE_DIRS=game/ tests/
 PYTEST=pytest -v -s tests --log-level=INFO
 COV_TYPE ?=html
@@ -70,3 +71,7 @@ install_dev:
 	pip install -r requirements/base.txt
 
 .PHONY: shell
+=======
+app:
+	doxker-compose up
+>>>>>>> 2bc84e320982af9510603982796afeef0ac82f1f
