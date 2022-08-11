@@ -1,24 +1,13 @@
-<<<<<<< HEAD
 version: '3.9'
-
-services:
-  buildozer:
-    container_name: buildozer
-    build:
-      context: .
-    image: buildozer
-   
-    user: user
-=======
-version: "3"
 
 services:
   buildozer:
     image: kivy/buildozer
     hostname: buildozer
     container_name: buildozer
+    build:
+      context: .
     command:
       -docker build -t jedie/buildozer .
       -docker run -t jedie/buildozer -v ${PWD}/kivy_hello_world:/buildozer/ buildozer --verbose android release
       -docker run -it jedie/buildozer -v ${PWD}/kivy_hello_world:/buildozer/ /bin/bash
->>>>>>> 2bc84e320982af9510603982796afeef0ac82f1f
