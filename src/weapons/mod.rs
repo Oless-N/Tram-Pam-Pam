@@ -1,6 +1,3 @@
-mod weapon;
-mod bullet;
-
 use macroquad::prelude::*;
 use crate::characters::character::Character;
 
@@ -32,16 +29,18 @@ impl Bullet {
 }
 
 pub trait Weapon {
-    fn attack(&self, owner: &Character); // Метод атаки, викликається, коли персонаж атакує
-    fn update(&mut self, owner: &mut Character); // Оновлення стану зброї
+    fn attack(&self, owner: &Character, bullets: &mut Vec<Bullet>, bullet_texture: Texture2D);
+    fn update(&mut self, owner: &mut Character);
 }
 
 impl Weapon for Bullet {
-    fn attack(&self, owner: &Character) {
-        // Реалізація атаки
+    fn attack(&self, owner: &Character, bullets: &mut Vec<Bullet>, bullet_texture: Texture2D) {
+        let bullet_x = owner.x + 20.0;
+        let bullet_y = owner.y;
+        bullets.push(Bullet::new(bullet_x, bullet_y, self.velocity, bullet_texture));
     }
 
     fn update(&mut self, owner: &mut Character) {
-        // Реалізація оновлення
+        // Логіка оновлення
     }
 }

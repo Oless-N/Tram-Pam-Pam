@@ -1,4 +1,4 @@
-use crate::characters::Character;
+use crate::characters::character::Character;
 
 pub struct Physics;
 

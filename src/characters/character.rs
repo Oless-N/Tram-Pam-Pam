@@ -16,7 +16,7 @@ pub struct Character {
 }
 
 impl Character {
-    pub fn new(x: f32, y: f32, texture: Texture2D, animations_1: Vec<Texture2D>, animations_2: Vec<Texture2D>, speed: f32) -> Self {
+    pub fn new(x: f32, y: f32, texture: Texture2D, animations: Vec<Texture2D>, animations_2: Vec<Texture2D>, speed: f32) -> Self {
         Character {
             x,
             y,

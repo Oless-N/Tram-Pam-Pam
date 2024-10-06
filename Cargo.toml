@@ -1,7 +1,11 @@
 [package]
-name = "tram_pam_pam"
+name = "Tram-Pam-Pam"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 macroquad = "0.4.13"
+
+[package.metadata.android]
+target_sdk_version = 35
+min_sdk_version = 21
